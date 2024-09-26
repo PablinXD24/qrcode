@@ -1,8 +1,6 @@
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const logoContainer = document.getElementById('logo-container');
 const resultDiv = document.getElementById('result');
-
 const canvasContext = canvas.getContext('2d');
 
 // Função para iniciar a câmera
@@ -27,9 +25,17 @@ function scanQRCode() {
 
     if (qrCode) {
         resultDiv.textContent = `QR Code Detectado: ${qrCode.data}`;
-        logoContainer.style.display = 'block';  // Exibe a logo
+
+        // Verifica se o QR Code corresponde ao link específico
+        if (qrCode.data === "pglt.me/QR1pzV1bzf") {
+            document.querySelector('a-scene').setAttribute('visible', 'true'); // Exibe a cena AR
+            resultDiv.textContent = "QR Code válido! Exibindo logo em AR.";
+        } else {
+            document.querySelector('a-scene').setAttribute('visible', 'false'); // Esconde a cena AR
+            resultDiv.textContent = "QR Code não corresponde.";
+        }
     } else {
-        logoContainer.style.display = 'none';  // Esconde a logo se não há QR
+        document.querySelector('a-scene').setAttribute('visible', 'false'); // Esconde a cena AR se não há QR
     }
 
     requestAnimationFrame(scanQRCode);
