@@ -22,15 +22,7 @@ body {
     max-width: 600px;
     border: 2px solid #333;
     border-radius: 10px;
-}
-
-#logo-container {
-    display: none; /* Esconde a logo até o QR Code ser lido */
     margin-top: 20px;
-}
-
-#logo {
-    width: 150px;
 }
 
 #result {
