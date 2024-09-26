@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code AR Logo</title>
+    <title>QR Code AR - Logo Flutuante</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- Inclusão da biblioteca AR.js -->
@@ -14,15 +14,16 @@
     <div class="container">
         <h1>QR Code Scanner com AR</h1>
         
-        <!-- Aqui será exibido o feed da câmera e o AR -->
+        <!-- Cena AR -->
         <a-scene embedded arjs>
-            <a-marker preset="hiro">
+            <!-- Marcador personalizado -->
+            <a-marker type="pattern" url="qr-code-pattern.patt">
                 <a-image src="https://raw.githubusercontent.com/PablinXD24/reposit-rio-de-imagens/refs/heads/main/neuron%20simples%20apenas.png" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-image>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
 
-        <!-- Câmera do QR Code -->
+        <!-- Feed da câmera para o QR Code -->
         <video id="video" autoplay></video>
         <canvas id="canvas" hidden></canvas>
         <div id="result"></div>
