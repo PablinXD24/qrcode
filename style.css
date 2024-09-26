@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+#video {
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+#logo-container {
+    display: none; /* Esconde a logo até o QR Code ser lido */
+    margin-top: 20px;
+}
+
+#logo {
+    width: 150px;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
