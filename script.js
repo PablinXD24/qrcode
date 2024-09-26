@@ -25,9 +25,9 @@ function scanQRCode() {
 
     if (qrCode) {
         resultDiv.textContent = `QR Code Detectado: ${qrCode.data}`;
-
-        // Verifica se o QR Code corresponde ao link específico
-        if (qrCode.data === "pglt.me/WXdZ3MiiDp") {
+        
+        // Verifica se o QR Code detectado é o que você enviou
+        if (qrCode.data.includes("pglt.me/QR1pzV1bzf")) {
             document.querySelector('a-scene').setAttribute('visible', 'true'); // Exibe a cena AR
             resultDiv.textContent = "QR Code válido! Exibindo logo em AR.";
         } else {
