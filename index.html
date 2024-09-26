@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
+    <title>QR Code AR Logo</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Inclusão da biblioteca AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>QR Code Scanner</h1>
+        <h1>QR Code Scanner com AR</h1>
+        
+        <!-- Aqui será exibido o feed da câmera e o AR -->
+        <a-scene embedded arjs>
+            <a-marker preset="hiro">
+                <a-image src="logo.png" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-image>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <!-- Câmera do QR Code -->
         <video id="video" autoplay></video>
         <canvas id="canvas" hidden></canvas>
-        <div id="logo-container">
-            <img id="logo" src="logo.png" alt="Logo Virtual">
-        </div>
         <div id="result"></div>
     </div>
 
-    <!-- Incluir o CDN do jsQR -->
+    <!-- Inclusão da biblioteca jsQR para leitura do QR Code -->
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     <script src="script.js"></script>
 </body>
